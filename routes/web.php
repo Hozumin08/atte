@@ -20,9 +20,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/timestamp', [AttendanceController::class, 'timestamp']
+)->middleware(['auth', 'verified'])->name('timestamp');
+
+Route::get('/attendance',[AttendanceController::class, 'index']
+)->middleware(['auth', 'verified'])->name('attendance');
+Route::post('/attendance',[AttendanceController::class, 'postIndex']
+)->middleware(['auth', 'verified'])->name('attendance');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

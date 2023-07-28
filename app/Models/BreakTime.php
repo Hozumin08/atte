@@ -13,6 +13,6 @@ class BreakTime extends Model
 
     public function work()
     {
-        return $this->belongsTo('app\Models\Work');
+        return $this->belongsTo(Work::class);
     }
 }

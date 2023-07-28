@@ -13,6 +13,8 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    protected $table = 'Users';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -44,8 +46,8 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function work()
+    public function works()
         {
-            return $this->hasmany('app\Models\Work');
+            return $this->hasmany(Work::class);
         }
 }

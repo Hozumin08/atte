@@ -9,12 +9,14 @@ class Work extends Model
 {
     use HasFactory;
 
+    protected $table = 'Works';
+
     public function user()
     {
-        return $this->belongsTo('app\Models\User');
+        return $this->belongsTo(User::class);
     }
-    public function breaktime()
+    public function breaktimes()
     {
-        return $this->hasmany('app\Models\Breaktime');
+        return $this->hasmany(Breaktime::class);
     }
 }

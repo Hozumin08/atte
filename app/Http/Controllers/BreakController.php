@@ -15,7 +15,7 @@ class BreakController extends Controller
     //
     public function stampBreakStart()
     {
-        return view('dashboard');
+        return view('workend');
     }
 
     public function breakstart(Request $request)
@@ -34,7 +34,7 @@ class BreakController extends Controller
             'break_start' => $breakStart
         ]);
 
-        return view('dashboard');
+        return view('breakend');
     }
 
     public function breakEnd(Request $request)
@@ -55,6 +55,6 @@ class BreakController extends Controller
             'break_end' => $breakEnd
         ]);
 
-        return view('dashboard');
+        return view('workend');
     }
 }

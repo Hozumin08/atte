@@ -1,0 +1,38 @@
+.date {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.date-button {
+  font-size: 20px;
+  font-weight: bold;
+  background-color: white;
+  border: 1px solid blue;
+  color: blue;
+  padding: 0px 10px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.attendance {
+  margin: 24px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.attendance th,
+.attendance td {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 24px;
+  text-align: center;
+  border-top: 1px solid black;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+}

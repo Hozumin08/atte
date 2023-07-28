@@ -52,14 +52,15 @@
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>
 
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a>
-
-            <x-primary-button class="ml-4">
-                {{ __('Register') }}
+        <div class="flex items-center justify-center mt-4">
+            <x-primary-button class="block mt-1 w-full" style="background-color:blue;">
+                {{ __('会員登録') }}
             </x-primary-button>
         </div>
+        <div style="text-align: center;">
+            <p style="color: gray;">アカウントをお持ちの方はこちらから</p>
+            <a href ="/login" style="color: blue;">ログイン</a>
+        </div>
+
     </form>
 </x-guest-layout>
