@@ -23,8 +23,30 @@
                                 <td>{{$user->name}}</td>
                                 <td>{{$user->work_start}}</td>
                                 <td>{{$user->work_end}}</td>
-                                <td>{{$user->break_time}}</td>
-                                <td>{{$user->work_time}}</td>
+                                <td>
+                                    @if(isset($user->break_time))
+                                        {{ $user->break_time }}
+                                    @else
+                                        00:00:00
+                                    @endif
+                                </td>
+                                <td>
+                                    @if(isset($user->work_time))
+                                        {{ $user->work_time }}
+                                    @else
+                                        <?php
+                                        // work_startとwork_endが存在する場合のみ、勤務時間を計算
+                                        if(isset($user->work_start) && isset($user->work_end)) {
+                                            $start = new DateTime($user->work_start);
+                                            $end = new DateTime($user->work_end);
+                                            $interval = $start->diff($end);
+                                            echo $interval->format('%H:%I:%S');
+                                        } else {
+                                            echo '00:00:00';
+                                        }
+                                        ?>
+                                    @endif
+                                </td>
                             </tr>
                         @endforeach
                     </table>

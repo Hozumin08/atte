@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.register');
 });
 
 Route::get('/timestamp', [AttendanceController::class, 'timestamp']
@@ -45,6 +45,8 @@ Route::post('/breakstart', [BreakController::class, 'breakStart']);
 
 Route::get('/breakend', [BreakController::class, 'stampBreakEnd']);
 Route::post('/breakend', [BreakController::class, 'breakEnd']);
+
+Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
 
 require __DIR__.'/auth.php';

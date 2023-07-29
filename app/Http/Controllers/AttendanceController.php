@@ -12,20 +12,19 @@ use carbon\carbon;
 
 class AttendanceController extends Controller
 {
-    //
     public function timestamp()
     {
         $userId = Auth::id();
         $date = date('Y-m-d');
-        
         $workData = DB::table('works')
                     ->where('user_id',$userId)
                     ->where('date',$date)
-                    ->where('work_end')
                     ->first();
 
-        if($workData == null){
+        if($workData === null){
             return view('workstart');
+        }elseif($workData !== null && $workData->work_end !== null){
+            return view('workfinish');
         }else{
             $workId = DB::table('works')
             ->where('user_id',$userId)
@@ -33,7 +32,7 @@ class AttendanceController extends Controller
             ->where('work_end',null)
             ->first()
             ->id;
-        $breakData = DB::table('breaks')
+            $breakData = DB::table('breaks')
             ->where('work_id',$workId)
             ->where('break_end',null)
             ->first();
