@@ -28,6 +28,7 @@ Laravel 10.0, Laravel breeze
 ![table](https://github.com/Hozumin08/atte/assets/122454277/17dcafe6-73b7-4b00-8556-a7db8bdf104a)
 
 ## ER図
+![atte-ER drowio](https://github.com/Hozumin08/atte/assets/122454277/169213f4-43cc-492c-83f3-222b18fb0a65)
 
 ## テストユーザー
 テスト用に以下のユーザーを登録しています。<br>
