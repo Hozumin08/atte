@@ -25,6 +25,7 @@ COACHTECHでの卒業課題として作成しました。
 Laravel 10.0, Laravel breeze
 
 ## テーブル設計
+![table](https://github.com/Hozumin08/atte/assets/122454277/17dcafe6-73b7-4b00-8556-a7db8bdf104a)
 
 ## ER図
 
